@@ -1,0 +1,262 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #292929;
+    font: 90% Roboto, Arial, sans-serif;
+    font-weight: 300;
+}
+
+p {
+    padding: 0 10px;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+ul li {
+    padding-right: 10px;
+    line-height: 1.6;
+}
+
+h3 {
+    padding: 5px 20px;
+    margin: 0;
+}
+
+div#header {
+    position: relative;
+}
+
+div#header h1 {
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+    padding-left: 10px;
+    background: #e0e0e0;
+    color: #292929;
+}
+
+div#header a {
+    position: absolute;
+    right: 0;
+    top: 23px;
+    padding: 10px;
+    color: #006;
+}
+
+div#navigation {
+    background: #7cb71c;
+}
+
+div#navigation li {
+    list-style: none;
+}
+
+div#extra {
+    background: #147FA9;
+}
+
+div#footer {
+    background: #42444e;
+    color: #fff;
+}
+
+div#footer p {
+    padding: 20px 10px;
+}
+
+div#container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+div#navigation {
+    float: left;
+    width: 350px;
+}
+
+div#extra {
+    float: right;
+    width: 350px;
+}
+
+div#footer {
+    clear: both;
+    width: 100%;
+}
+
+
+.form__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+
+
+button {
+  --b: 3px;   /* border thickness */
+  --s: .15em; /* size of the corner */
+  --c: black;
+
+  padding: calc(.05em + var(--s)) calc(.3em + var(--s));
+  color: var(--c);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--c) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .2em;
+}
+button:hover,
+button:focus-visible{
+  --_p: 0px;
+  outline-color: var(--c);
+  outline-offset: .05em;
+}
+button:active {
+  background: var(--c);
+  color: #fff;
+}
+button {
+  font-family: system-ui, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  cursor: pointer;
+  border: none;
+  margin: .1em;
+}
+
+
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: white;
+  color: black;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  /* <option> colors */
+  option {
+    color: black;
+    background-color: white;
+  }
+}
+
+
+
+
+
+
+.table {
+	width:100%;
+	border:1px solid #EEEEEE;
+}
+
+.table-header {
+	display:flex;
+	width:100%;
+	background:#000;
+	padding:(12px * 1.5) 0;
+}
+
+.table-row {
+	display:flex;
+	width:100%;
+	padding:(12px * 1.5) 0;
+
+	&:nth-of-type(odd) {
+		background:#EEEEEE;
+	}
+}
+
+.table-data, .header__item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+	flex: 1 1 20%;
+	text-align:center;
+	align-items:center;
+	font-size: 120%;
+}
+
+.header__item {
+	text-transform:uppercase;
+	color:white;
+}
+
+.notExists{
+    display: none;
+}
+
+.exists{
+    display: flex;
+}
+
+img {
+max-width: 100%;
+}
+
+.table-data{
+	font-size: 150%;
+}
+
+#account{
+    position: absolute;
+    right:0px;
+    top:0px;
+    width:150px;
+    height:100px;
+    justify-content:center;
+    align-items: center;
+    background: black;
+    color: white;
+    font-size: 1.5em;
+}

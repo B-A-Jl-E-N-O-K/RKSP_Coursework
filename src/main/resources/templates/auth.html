@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Авторизация</h1>
+
+    </div>
+    <div id="wrapper">
+        <div id="content">
+
+            <form name="form" id ="form" method="post" action="/auth">
+
+                <fieldset>
+                    <legend>Данные пользователя</legend>
+                    <p>
+                        <input type="text" class="form__input" id="name" name="name" placeholder="Your name or email" required="" th:text="${message}"/>
+                        <label for="name" class="form__label">Your name or email</label>
+                    </p>
+                    <p>
+                    <input type="password" class="form__input" id="password" name="password" placeholder="Password" required="" th:text="${message}"/>
+                    <label for="password" class="form__label">Password</label>
+                    </p>
+                    <p>
+                        <button style="--c: #373B44;--b: 5px;--s:12px" type="submit">Войти</button>
+                    </p>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p><a href="reg">Регистрация</a></p>
+        <p><a href="/">Список инвестиционных инструментов</a></p>
+    </div>
+</div>
+</body>
+</html>

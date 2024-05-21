@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Пользователи</h1>
+
+
+    </div>
+    <div id="wrapper">
+        <div id="content">
+
+            <p>
+            <div class="table" id="table_id">
+                <div class="table-header">
+                    <div class="header__item"><p>Id</p></div>
+                    <div class="header__item"><p>Name</p></div>
+                    <div class="header__item"><p>Email</p></div>
+                    <div class="header__item"><p>Password</p></div>
+                    <div class="header__item"><p>VIP</p></div>
+                    <div class="header__item"><p>Admin</p></div>
+                    <div class="header__item"><p>Account Balance</p></div>
+                </div>
+                <div class="table-content" id="table-cont-id">
+                    <div class="table-row" th:each="user:${userlist}">
+                        <div class="table-data" th:text="${user.id}" ></div>
+                        <div class="table-data" th:text="${user.name}"></div>
+                        <div class="table-data" th:text="${user.email}"></div>
+                        <div class="table-data" th:text="${user.password}"></div>
+                        <div class="table-data" th:text="${user.vip}"></div>
+                        <div class="table-data" th:text="${user.admin}"></div>
+                        <div class="table-data" th:text="${user.account}"></div>
+                    </div>
+
+                </div>
+            </div>
+            </p>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p><a href="/">Список инструментов</a></p>
+        <p><a href="auth">Авторизация</a></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список доступных инвестиционных инструментов</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Инвестиционные инструменты</h1>
+    </div>
+    <div id="wrapper">
+        <div id="content">
+
+            <p>
+                <div class="table" id="table_id">
+                    <div class="table-header">
+                        <div class="header__item" th:classappend="${isAdmin} ? 'exists' : 'notExists'"><p>DB_id</p></div>
+                        <div class="header__item"><p>Id</p></div>
+                        <div class="header__item"><p>Name</p></div>
+                        <div class="header__item"><p>Price</p></div>
+                        <div class="header__item"><p>Link</p></div>
+                    </div>
+                    <div class="table-content" id="table-cont-id">
+                        <div class="table-row" th:each="sec:${seclist}">
+                            <div class="table-data" th:text="${sec.id}" th:classappend="${isAdmin} ? 'exists' : 'notExists'"></div>
+                            <div class="table-data" th:text="${sec.strId}"></div>
+                            <div class="table-data" th:text="${sec.name}"></div>
+                            <div class="table-data" th:text="${sec.price} == -1 ? 'Нет сделок' : ${sec.price}"></div>
+                            <div class="table-data"><a th:href="@{/sec/} + ${sec.strId}">Перейти</a></div>
+                        </div>
+
+                    </div>
+                </div>
+            </p>
+        </div>
+
+    </div>
+    <div id="footer">
+
+        <p><a href="auth">Авторизация</a></p>
+
+
+        <p><a href="users" th:classappend="${isAdmin} ? 'exists' : 'notExists'">Пользователи</a></p>
+    </div>
+</div>
+</body>
+</html>

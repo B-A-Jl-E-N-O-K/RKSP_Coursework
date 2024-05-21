@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инвестиционный портфель</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Инвестиционный портфель</h1>
+    </div>
+    <div id="wrapper">
+        <div id="content">
+
+            <p>
+                <div id="account"><p th:text="${currAccountBalance}"></p></div>
+
+                <div class="table" id="table_id">
+                    <div class="table-header">
+                        <div class="header__item"><p>Id</p></div>
+                        <div class="header__item"><p>Buy Price</p></div>
+                        <div class="header__item"><p>Sell Price</p></div>
+                        <div class="header__item"><p>Profit</p></div>
+                        <div class="header__item"><p>Link</p></div>
+                    </div>
+                    <div class="table-content" id="table-cont-id">
+                        <div class="table-row" th:each="sec:${seclist}">
+                            <div class="table-data" th:text="${sec.strId}"></div>
+                            <div class="table-data" th:text="${sec.startPrice}"></div>
+                            <div class="table-data" th:text="${sec.endPrice}"></div>
+                            <div class="table-data" th:text="${sec.profit}"></div>
+                            <div class="table-data"><a th:href="@{/buy/sell/} + ${sec.id}">Sell</a></div>
+                        </div>
+
+                    </div>
+                </div>
+            </p>
+        </div>
+
+    </div>
+    <div id="footer">
+
+        <p><a href="auth">Авторизация</a></p>
+
+        <p><a href="../">Список инвестиционных инструментов</a></p>
+
+        <p><a href="users" th:classappend="${isAdmin} ? 'exists' : 'notExists'">Пользователи</a></p>
+
+    </div>
+</div>
+</body>
+</html>
